@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mapa en App Inventor</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+  <div id="map" style="height:100vh;"></div>
+  <script>
+    var map = L.map('map').setView([19.3, -98.9], 13); // Coordenadas de Ixtapaluca
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+    L.marker([19.3, -98.9]).addTo(map).bindPopup("Aquí estás!");
+  </script>
+</body>
+</html>

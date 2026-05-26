@@ -1,0 +1,174 @@
+/* Estilos específicos para la página de registro (unete.php) */
+
+.hero-join {
+    background: linear-gradient(135deg, var(--azul-marino) 0%, var(--verde) 100%);
+    color: var(--blanco);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.hero-join-title {
+    font-size: 3rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.join-form-container {
+    background-color: var(--blanco);
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-top: -50px;
+    margin-bottom: 80px;
+}
+
+.form-title {
+    color: var(--azul-marino);
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.form-control {
+    border: none;
+    border-bottom: 2px solid #ddd;
+    border-radius: 0;
+    padding: 10px 0;
+    margin-bottom: 25px;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-bottom-color: var(--verde);
+}
+
+.vehicle-options {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.vehicle-option {
+    text-align: center;
+    flex: 1;
+    padding: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 8px;
+}
+
+.vehicle-option:hover {
+    background-color: rgba(0, 35, 102, 0.1);
+}
+
+.vehicle-option input {
+    display: none;
+}
+
+.vehicle-option input:checked + .vehicle-content {
+    color: var(--verde);
+    font-weight: bold;
+}
+
+.vehicle-icon {
+    font-size: 2rem;
+    color: var(--azul-marino);
+    margin-bottom: 10px;
+}
+
+.btn-join {
+    background-color: var(--verde);
+    color: var(--blanco);
+    border: none;
+    padding: 12px 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 30px;
+    transition: all 0.3s;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.btn-join:hover {
+    background-color: var(--azul-marino);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para el campo de fecha de nacimiento */
+.birthdate-container {
+    position: relative;
+}
+
+.birthdate-label {
+    color: var(--azul-marino);
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.birthdate-requirement {
+    font-size: 0.8rem;
+    color: #dc3545;
+    font-weight: bold;
+    margin-top: 3px;
+}
+
+input[type="date"] {
+    background-color: #f8f9fa;
+    padding: 10px 15px !important;
+    border-radius: 5px !important;
+    border: 2px solid var(--azul-marino) !important;
+}
+
+input[type="date"]:focus {
+    border-color: var(--verde) !important;
+    box-shadow: 0 0 0 0.25rem rgba(76, 175, 80, 0.25);
+}
+
+.birthdate-warning {
+    position: absolute;
+    right: 10px;
+    top: 35px;
+    color: var(--verde);
+    cursor: help;
+}
+
+.watermark-logo {
+  position: absolute;
+  bottom: 100px;
+  right: 100 px;
+  z-index: 0;
+  pointer-events: none; /* ¡La clave! Permite clics "a través" de la imagen */
+  user-select: none; /* Evita que se seleccione el texto/imagen accidentalmente */
+ }
+.join-form-container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-join-title {
+        font-size: 2.2rem;
+    }
+    
+    .vehicle-options {
+        flex-wrap: wrap;
+    }
+    
+    .vehicle-option {
+        flex: 50%;
+        margin-bottom: 15px;
+    }
+    
+    .join-form-container {
+        padding: 25px;
+    }
+    
+    .birthdate-warning {
+        top: 30px;
+    }
+}

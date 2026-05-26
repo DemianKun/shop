@@ -1,0 +1,192 @@
+:root {
+    --verde: #fe810d;
+    --azul-marino: #231911;
+    --blanco: #FFFFFF;            
+}
+    
+.hero-quote {
+    background: linear-gradient(135deg, var(--azul-marino) 0%, var(--verde) 100%);
+    color: var(--blanco);
+    padding: 80px 0;
+    text-align: center;
+}
+    
+.hero-quote-title {
+    font-size: 3rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+    
+.quote-form-container {
+  background-color: var(--blanco);
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin-top: -50px;
+  margin-bottom: 0 !important; /* no gap before footer */
+}
+    
+.form-title {
+    color: var(--azul-marino);
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    text-align: center;
+}
+    
+.address-section {
+    margin-bottom: 40px;
+    padding: 25px;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+}
+    
+.section-title {
+    color: var(--verde);
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+}
+    
+.section-title i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+    
+.form-control {
+    border: none;
+    border-bottom: 2px solid #ddd;
+    border-radius: 0;
+    padding: 10px 0;
+    margin-bottom: 25px;
+}
+    
+.form-control:focus {
+    box-shadow: none;
+    border-bottom-color: var(--verde);
+}
+    
+.btn-quote {
+    background-color: var(--verde);
+    color: var(--blanco);
+    border: none;
+    padding: 12px 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 30px;
+    transition: all 0.3s;
+    width: 100%;
+    margin-top: 20px;
+}
+    
+.btn-quote:hover {
+    background-color: var(--azul-marino);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.pickup-section {
+    background-color: rgba(76, 175, 80, 0.1);
+    border-left: 4px solid var(--verde);
+}
+    
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-quote-title {
+        font-size: 2.2rem;
+    }
+        
+    .quote-form-container {
+        padding: 25px;
+    }
+}
+ .watermark-logo {
+  position: absolute;
+  bottom: 100px;
+  right: 100 px;
+  z-index: 0;
+  pointer-events: none; /* ¡La clave! Permite clics "a través" de la imagen */
+  user-select: none; /* Evita que se seleccione el texto/imagen accidentalmente */
+ }
+.join-form-container {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 0 !important; /* ensure no extra gap after form */
+}
+.watermark-logo-top {
+  position: absolute;
+  top: 20px;
+   right: 20px;
+  z-index: 0;
+  pointer-events: none; /* ¡La clave! Permite clics "a través" de la imagen */
+  user-select: none; /* Evita que se seleccione el texto/imagen accidentalmente */
+ 
+}
+
+.moto-container-rtl {
+  position: fixed;
+  bottom: 8%;
+  right: 0;
+  z-index: 1000;
+  animation: moverMotoRTL 10s linear forwards;
+  transform: scaleX(-1); /* Voltea horizontalmente la moto */
+}
+
+.moto-animada-rtl {
+  width: 120px;
+  position: relative;
+  z-index: 2;
+  animation: balanceo 0.8s ease-in-out infinite alternate;
+}
+
+.polvo-estela-rtl {
+  position: absolute;
+  width: 300px;
+  height: 60px;
+  background: radial-gradient(ellipse at center, 
+            rgba(150, 100, 50, 0.7) 0%, 
+            rgba(150, 100, 50, 0) 70%);
+  filter: blur(7px);
+  bottom: -10px;
+  right: -150px;
+  z-index: 1;
+  animation: 
+    estirarPolvoRTL 10s linear forwards,
+    desvanecerPolvo 2s infinite alternate;
+}
+
+/* Animaciones RTL */
+@keyframes moverMotoRTL {
+  0% { 
+    transform: translateX(100px) scaleX(-1); /* Inicia fuera a la derecha */
+  }
+  100% { 
+    transform: translateX(calc(-100vw - 100px)) scaleX(-1); /* Sale por izquierda */
+  }
+}
+
+@keyframes estirarPolvoRTL {
+  0% { width: 50px; opacity: 0; right: -50px; }
+  20% { width: 300px; opacity: 0.7; right: -150px; }
+  100% { width: 100px; opacity: 0; right: 50px; }
+}
+
+/* Balanceo (igual que antes) */
+@keyframes balanceo {
+  0% { transform: rotate(-5deg) scaleX(-1); }
+  100% { transform: rotate(5deg) scaleX(-1); }
+}
+@keyframes moverMotoRTL {
+  0% { 
+    transform: translateX(100px) scaleX(-1); 
+  }
+  50% {
+    transform: translateX(-50vw) translateY(-20px) scaleX(-1);
+  }
+  100% { 
+    transform: translateX(calc(-100vw - 100px)) translateY(0) scaleX(-1);
+  }
+}

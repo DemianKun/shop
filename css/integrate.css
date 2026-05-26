@@ -1,0 +1,292 @@
+:root {
+  --azul-marino: #231911;
+    --blanco: #FFFFFF;            
+    --verde: #fe810d;
+}
+    
+.hero-integrate {
+    background: linear-gradient(135deg, var(--azul-marino) 0%, var(--verde) 100%);
+    color: var(--blanco);
+    padding: 80px 0;
+    text-align: center;
+}
+    
+.hero-integrate-title {
+    font-size: 3rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+    
+.integrate-form-container {
+    background-color: var(--blanco);
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-top: -40px; /* slightly reduce overlap with hero */
+    margin-bottom: 0 !important; /* no gap before footer */
+}
+    
+.form-title {
+    color: var(--azul-marino);
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    text-align: center;
+}
+    
+.business-section {
+    margin-bottom: 40px;
+    padding: 25px;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+}
+    
+.section-title {
+    color: var(--verde);
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+}
+    
+.section-title i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+    
+.form-control {
+    border: none;
+    border-bottom: 2px solid #ddd;
+    border-radius: 0;
+    padding: 10px 0;
+    margin-bottom: 25px;
+}
+    
+.form-control:focus {
+    box-shadow: none;
+    border-bottom-color: var(--verde);
+}
+    
+.btn-integrate {
+    background-color: var(--verde);
+    color: var(--blanco);
+    border: none;
+    padding: 12px 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 30px;
+    transition: all 0.3s;
+    width: 100%;
+    margin-top: 20px;
+}
+    
+.btn-integrate:hover {
+    background-color: var(--azul-marino);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+    
+#businessMap {
+    height: 400px;
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 20px;
+    border: 3px solid var(--verde);
+}
+    
+.map-container {
+    position: relative;
+}
+    
+.map-label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 5px 10px;
+    border-radius: 5px;
+    z-index: 1000;
+    font-weight: bold;
+    color: var(--azul-marino);
+}
+    
+    /* Footer rules moved to css/footer.css to ensure a consistent footer across pages */
+    
+/* Estilos para los giros comerciales */
+.business-type-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+    
+.business-type-option {
+    flex: 1 0 200px;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+}
+    
+.business-type-option:hover {
+    border-color: var(--verde);
+}
+    
+.business-type-option input {
+    display: none;
+}
+    
+.business-type-option input:checked + .business-type-content {
+    color: var(--verde);
+    font-weight: bold;
+}
+    
+.business-type-icon {
+    font-size: 1.5rem;
+    color: var(--azul-marino);
+    margin-bottom: 10px;
+}
+    
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-integrate-title {
+        font-size: 2.2rem;
+    }
+        
+    .integrate-form-container {
+        padding: 25px;
+    }
+        
+    .business-type-option {
+        flex: 1 0 100%;
+    }
+}
+.map-instructions {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 8px 15px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    z-index: 1000;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+    
+.search-box {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+    background: white;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+    
+.search-box input {
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    width: 200px;
+}
+    
+.search-box button {
+    background: var(--verde);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 5px;
+    border-radius: 3px;
+}
+.watermark-logo-top {
+  position: absolute;
+  top: 8px;
+   right: 8px;
+  z-index: 0;
+  pointer-events: none; /* ¡La clave! Permite clics "a través" de la imagen */
+  user-select: none; /* Evita que se seleccione el texto/imagen accidentalmente */
+ 
+}
+.watermark-logo {
+  position: absolute;
+  bottom: 100px;
+  right: 100 px;
+  z-index: 0;
+  pointer-events: none; /* ¡La clave! Permite clics "a través" de la imagen */
+  user-select: none; /* Evita que se seleccione el texto/imagen accidentalmente */
+ }
+.join-form-container {
+  position: relative;
+  z-index: 1;
+    margin-bottom: 0 !important; /* ensure no extra gap after form */
+  
+}
+/* CSS para movimiento RTL (Right-To-Left) */
+.moto-container-rtl {
+  position: fixed;
+  bottom: 8%;
+  right: 0;
+  z-index: 1000;
+  animation: moverMotoRTL 10s linear forwards;
+  transform: scaleX(-1); /* Voltea horizontalmente la moto */
+}
+
+.moto-animada-rtl {
+  width: 120px;
+  position: relative;
+  z-index: 2;
+  animation: balanceo 0.8s ease-in-out infinite alternate;
+}
+
+.polvo-estela-rtl {
+  position: absolute;
+  width: 300px;
+  height: 60px;
+  background: radial-gradient(ellipse at center, 
+            rgba(150, 100, 50, 0.7) 0%, 
+            rgba(150, 100, 50, 0) 70%);
+  filter: blur(7px);
+  bottom: -10px;
+  right: -150px;
+  z-index: 1;
+  animation: 
+    estirarPolvoRTL 10s linear forwards,
+    desvanecerPolvo 2s infinite alternate;
+}
+
+/* Animaciones RTL */
+@keyframes moverMotoRTL {
+  0% { 
+    transform: translateX(100px) scaleX(-1); /* Inicia fuera a la derecha */
+  }
+  100% { 
+    transform: translateX(calc(-100vw - 100px)) scaleX(-1); /* Sale por izquierda */
+  }
+}
+
+@keyframes estirarPolvoRTL {
+  0% { width: 50px; opacity: 0; right: -50px; }
+  20% { width: 300px; opacity: 0.7; right: -150px; }
+  100% { width: 100px; opacity: 0; right: 50px; }
+}
+
+/* Balanceo (igual que antes) */
+@keyframes balanceo {
+  0% { transform: rotate(-5deg) scaleX(-1); }
+  100% { transform: rotate(5deg) scaleX(-1); }
+}
+@keyframes moverMotoRTL {
+  0% { 
+    transform: translateX(100px) scaleX(-1); 
+  }
+  50% {
+    transform: translateX(-50vw) translateY(-20px) scaleX(-1);
+  }
+  100% { 
+    transform: translateX(calc(-100vw - 100px)) translateY(0) scaleX(-1);
+  }
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Seleccionar ubicación</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #contenedor {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+        }
+        iframe {
+            width: 100%;
+            height: 450px;
+            border: 1px solid #ccc;
+        }
+        #guardar {
+            display: none;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #coords {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Selecciona una ubicación</h2>
+<input id="calle" name="calle" placeholder="Calle">
+<input id="num_ext" name="num_ext" placeholder="Número exterior">
+<input id="num_int" name="num_int" placeholder="Número interior">
+<input id="colonia" name="colonia" placeholder="Colonia">
+<input id="cp" name="cp" placeholder="Código Postal">
+<input id="ciudad" name="ciudad" placeholder="Ciudad">
+<input id="ref" name="ref" placeholder="Referencias">
+<button type="button">
+    <img src="buscar.png" alt="Icono" width="20" height="20">
+</button>
+<br><br>
+
+
+<div id="contenedor">
+    <iframe
+        id="mapa"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=-99.25,19.35,-99.05,19.55&layer=mapnik"
+        allowfullscreen>
+    </iframe>
+</div>
+
+<div id="coords"></div>
+
+    <button type="submit">Guardar ubicación</button>
+
+<script>
+    // Bounding box usada en el iframe (CDMX)
+    const bbox = {
+        minLon: -99.25,
+        minLat: 19.35,
+        maxLon: -99.05,
+        maxLat: 19.55
+    };
+
+    const contenedor = document.getElementById("contenedor");
+    const coords = document.getElementById("coords");
+    const guardarBtn = document.getElementById("guardar");
+
+    contenedor.addEventListener("click", function (e) {
+        const rect = contenedor.getBoundingClientRect();
+
+        // Posición del click relativa al mapa
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        // Proporción
+        const xRatio = x / rect.width;
+        const yRatio = y / rect.height;
+
+        // Conversión a lat/lon
+        const lon = bbox.minLon + (bbox.maxLon - bbox.minLon) * xRatio;
+        const lat = bbox.maxLat - (bbox.maxLat - bbox.minLat) * yRatio;
+
+        coords.innerText = `Latitud: ${lat.toFixed(6)} | Longitud: ${lon.toFixed(6)}`;
+
+        guardarBtn.style.display = "inline-block";
+
+        // Guardamos temporalmente
+        window.latSeleccionada = lat;
+        window.lonSeleccionada = lon;
+    });
+
+    function guardar() {
+        alert(
+            `Ubicación guardada:\nLatitud: ${window.latSeleccionada.toFixed(6)}\nLongitud: ${window.lonSeleccionada.toFixed(6)}`
+        );
+
+        // Ejemplo: localStorage
+        // localStorage.setItem("ubicacion", JSON.stringify({
+        //     lat: window.latSeleccionada,
+        //     lon: window.lonSeleccionada
+        // }));
+    }
+</script>
+<button id="guardar" onclick="guardar()">Guardar dirección</button>
+
+</body>
+</html>
